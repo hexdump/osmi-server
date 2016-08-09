@@ -9,7 +9,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 @app.route("/", methods=["POST"])
 @cross_origin()
 def update():
-    return randint(1,16)
+    return str(randint(1,16))
 
 @app.route("/", methods=["PUT"])
 def send():
