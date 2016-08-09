@@ -1,14 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask.ext.cors import CORS, cross_origin
+from random import randint
+
 
 app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route("/", methods=["POST"])
-@cross-origin
+@cross_origin()
 def update():
-    return "Well hello there!"
+    return randint(1,16)
 
 @app.route("/", methods=["PUT"])
 def send():
