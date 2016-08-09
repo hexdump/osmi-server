@@ -11,6 +11,10 @@ def update():
 def send():
     return "FEED ME SEYMOUR!!!"
 
+@app.route("/", methods=["GET"])
+def do():
+    return "safary sucks"
+
 @app.errorhandler(404)
 def page_not_found(error):
     """Custom 404 page."""
