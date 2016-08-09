@@ -1,9 +1,12 @@
-import os
 from flask import Flask, render_template, request, redirect, url_for
+from flask.ext.cors import CORS, cross_origin
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route("/", methods=["POST"])
+@cross-origin
 def update():
     return "Well hello there!"
 
