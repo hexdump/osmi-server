@@ -9,7 +9,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 @app.route("/", methods=["POST"])
 @cross_origin()
 def update():
-    if request.data.split("SEP")[0].split(",") == 5:
+    if len(request.data.split("SEP")[0].split(",")) == 6:
         return "END"
     else:
         return str(randint(1,16)) + ',' + str(len(request.data.split("[SEP]")[0].split(",")) * 20)
